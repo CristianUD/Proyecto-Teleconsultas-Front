@@ -9,6 +9,7 @@ import SchedulePro from "./components/SchedulePro";
 import ProtectedRoute from "./components/ProtectedR";
 import Error404 from "./components/error404";
 import GenRecetas from "./components/GenRecetas"; 
+import GenHistoria from "./components/GenHistoria"; 
 import { getUserRole } from "./utils/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -28,6 +29,7 @@ function Layout() {
         <Route path="/Schedule" element={<ProtectedRoute element={<Schedule />} allowedRoles={["Paciente"]} />} />
         <Route path="/SchedulePro" element={<ProtectedRoute element={<SchedulePro />} allowedRoles={["Profesional"]} />} />
         <Route path="/GenerarRecetas" element={<ProtectedRoute element={<GenRecetas />} allowedRoles={["Profesional"]} />} />
+        <Route path="/historia" element={<ProtectedRoute element={<GenHistoria />} allowedRoles={["Profesional"]} />} />
       </Routes>
     </>
   );
